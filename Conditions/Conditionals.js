@@ -1,3 +1,4 @@
+//prompt will always take a string//
 let a = prompt("Hey whats you age?");
 a = Number.parseInt(a); // Converting the string to a number
 if(a<0){
@@ -13,5 +14,20 @@ else{
   alert("You can now drive as you are above 18");
 }
 console.log("Done")
-// HomeWork - Explore switch statement and write a basic program in the comments
+
+//Switchs//
+const expr = 'Red';
+switch (expr) {
+    case 'Yellow':
+    console.log('Yellow color');
+    break;
+
+    case 'Red':
+    console.log('Red color');
+    break;
+
+    default:
+    console.log('Not color');
+}
+//ternary operator
 console.log("You can", (a<18? "not drive" :"drive"))
