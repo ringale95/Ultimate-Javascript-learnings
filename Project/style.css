@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap"); 
+
+*{ /*this is universal */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* same sizing of box overall */
+}
+:root{ /* here for color we are making some variables so instead of using # values we can use this var*/
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --accent-color: #2294ed;
+   
+}
+body{
+    font-family: "Poppins", "sans-serif";
+    color:var(--primary-text-color);
+}
+
+p{
+    font-family:"Roboto", "sans-serif";
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none; /* to remove underline*/
+
+}
+
+ul {
+    list-style: none;
+}
+
+/*utility classes - which is a small reusable class that is designed to perform a specific
+styling or func. It is used to apply simple styles to element without complex css
+In CSS, a "flex utility class" refers to a set of pre-defined CSS classes that leverage the 
+flexible box layout model (flexbox) to create flexible and responsive layouts. 
+Flexbox is a powerful layout system that allows you to distribute and align elements within a container, 
+making it easier to create dynamic and adaptive designs.*/
+
+.flex{
+    display:flex;
+    align-items: center;
+}
+
+.container{ /* to give all items same width ex: nav and down page are properly aligned*/
+max-width: 1180px;
+margin-inline: auto; /*equal left and right margin aligned and the content inside is horizontally centered within parent container*/
+overflow: hidden ; /* ou can prevent content from overflowing and causing layout issues or overlapping with other elements. This property is often used in combination with fixed-width containers or elements that have a limited size.*/
+}
+
+nav{
+    background-color: #f3faff;
+    box-shadow: 0 0 4px #bbd0e2;/*The box-shadow property applies a shadow effect to an element. The syntax for box-shadow is h-shadow v-shadow blur spread color*/
+    position: fixed; /*always postion fix at topand will not move when scroll*/
+    top:0;/*specifies distance from top edge */
+    z-index: 99;/*controls stacking order of element in z-axis.stacked above all elements*/
+    left: 0;
+    right:0
+}
+.main-nav{ /*below will help to create equally spaced elements*/
+    justify-content: space-between;/*When justify-content is set to space-between, the flex items will be evenly distributed along the main axis with equal space between each item. This means that the first item will be placed at the start of the flex container, the last item will be placed at the end, and the remaining items will be spaced evenly between them. There will be no space before the first item or after the last item.*/
+    padding-block: 8px;
+    
+}
+.company-logo img{
+    width: 120px;
+}
+
+.nav-links ul { /*helps to give gap between ul*/
+    gap: 16px;
+
+}
+.hover-link{
+    cursor:pointer; /*user hoverlink class to change the curse*/
+}
+
+.hover-link:hover{
+    color:var(--secondary-text-color)
+}
+
+.hover-link:active{ /*when we click then also change color*/
+    color:red
+}
+.nav-item.active{
+    color: var(--accent-color);
+}
+
+.search-bar{
+    height: 32px;
+    gap: 8px;
+}
+.news-input{
+    width: 200px;
+    height: 100%;
+    padding-inline: 12px;
+    border-radius: 4px; /*used to create rounded corners of the box*/
+    border: 2px solid #bbd0e2; /* includes width, style, colo*/
+    font-family: sans-serif;/*as from body the form elements will not take*/
+}
+
+.search-button{
+    background-color: var(--accent-color);
+    color: white;
+    padding:8px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: sans-serif;/*as from body the form elements will not take*/
+
+}
+.search-button:hover{
+    background-color: grey;
+}
+
+main{
+    padding-block:20px;
+    margin-top: 100px; /*since we have given space from top which is needed else it will go inside*/
+
+}
+
+.card-container{
+    justify-content: space between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    align-items: start;
+
+
+}
+
+.card{
+    width: 360px;
+    min-height: 400px;
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #fff;
+    overflow: hidden; /*image will not follow the border radius and it will go out of limit so overflow hidden will cut the image*/
+    transition: all 0.3s ease; /*the animation will takeup smoothly*/
+
+}
+
+
+.card:hover{
+    box-shadow: 1px 1px 1px #d4ecff;
+    background-color: #f9fdff;
+    transform: translateY(-2px); /*the box will scale up by 2 pc*/
+
+}
+
+.card-header img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;/*entire container is fitted with image*/
+}
+.card-content {
+    padding: 12px;/*comes inside*/
+}
+
+.news-source{
+   margin-block: 12px; 
+}
+

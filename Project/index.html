@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class = "main-nav container flex">  <!--3 clases are there now below ul and search will be in one line now-->
+            <a href="#" class ="company-logo"> <!--a href points to a particular link but we used # so it points to the same page link curent page-->
+                <img src="./assets/images.jpg" alt="company logo">
+            </a>
+        <div class="nav-links">
+            <ul class="flex">
+                <li class="hover-link nav-item"id ="IPL" onclick="onNavItemClick('ipl')">IPL</li>
+                <li class="hover-link nav-item" id="Finance"onclick="onNavItemClick('finance')">Finance</li>
+                <li class="hover-link nav-item" id="Politcs"onclick="onNavItemClick('politics')">Politics</li>
+            </ul>
+        </div>
+        <div class="search-bar flex">
+            <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+            <button id="search-button" class="search-button">Search</button>
+        </div>
+        </div>
+
+    </nav>
+
+    <main>
+        <div class="card-container container flex" id="card-containers">
+         
+    </div>
+
+    </main>
+    <template id="template-news-card"> <!--we need to call api and show multiple card so we use template and it goes away from DOM-->
+        <div class="card"><!--here we have lot of cards-->
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+            </div>
+        <div class = "card-content">
+        <h3 id="news-title">This is the title</h3>           
+        <h6 class="news-source" id="news-source">End gadget 2023</h6>
+        <p class="news-desc" id="news-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi explicabo, quo nam earum fugiat maxime veritatis ipsam quos? Ipsum voluptatum inventore libero quibusdam! Dolore qui repudiandae amet, accusantium voluptate doloremque.</p>
+    </div>
+    </div>
+    </template>
+    
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
